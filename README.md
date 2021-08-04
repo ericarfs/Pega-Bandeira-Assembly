@@ -1,1 +1,12 @@
 # Pega-Bandeira-Assembly
+### Projeto de um jogo implementado em Assembly e construção do Hardware do Processador ICMC no "Simple Simulator".
+
+* __Estudante__: Érica Ribeiro F. dos Santos 
+
+* __nUsp__: 11836351
+
+* __Turma__: BCC 020
+
+* __Disciplina__: SSC0180 - Eletrônica para Computação
+
+* __Docente__: Eduardo do Valle Simões
