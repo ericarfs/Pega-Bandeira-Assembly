@@ -7,6 +7,6 @@
 
 * __Turma__: BCC 020
 
-* __Disciplina__: SSC0180 - Eletrônica para Computação
+* __Disciplina__:  SSC0119 - Prática em Organização de Computadores
 
 * __Docente__: Eduardo do Valle Simões
