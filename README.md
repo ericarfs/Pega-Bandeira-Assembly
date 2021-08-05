@@ -12,7 +12,7 @@
 * __Docente__: Eduardo do Valle Simões
 
 ## O Jogo - Pega Bandeira
-# O objetivo do jogo é pegar as quatro bandeiras que estão na base adversária e colocá-las na  
+#### O objetivo do jogo é pegar as quatro bandeiras que estão na base adversária e colocá-las na  
 ![Alt text](https://github.com/ericarfs/Pega-Bandeira-Assembly/blob/main/imagem_jogo1.PNG?raw=true  "Tela inicial do jogo")
 ![Alt text](https://github.com/ericarfs/Pega-Bandeira-Assembly/blob/main/imagem_jogo2.PNG?raw=true  "Mapa do jogo")
 ![Alt text](https://github.com/ericarfs/Pega-Bandeira-Assembly/blob/main/imagem_jogo3.PNG?raw=true  "Tela de derrota")
