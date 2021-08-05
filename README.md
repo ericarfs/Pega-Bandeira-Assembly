@@ -12,4 +12,5 @@
 * __Docente__: Eduardo do Valle Simões
 
 ## O Jogo - Pega Bandeira
-https://github.com/ericarfs/Pega-Bandeira-Assembly/blob/main/imagem_jogo1.PNG?raw=true
+![Alt text](https://github.com/ericarfs/Pega-Bandeira-Assembly/blob/main/imagem_jogo1.PNG?raw=true  "Diagrama da Fonte com os valores dos componentes")
+
