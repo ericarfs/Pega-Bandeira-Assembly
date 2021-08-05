@@ -20,5 +20,6 @@
 
 ## Modificação do processador para com a função SQRT implementada
 
+
 #### A função implementada calcula a raiz quadrada de um número, retorando seu valor inteiro.
 [Link para o video com a explicação do código](https://youtu.be/)
