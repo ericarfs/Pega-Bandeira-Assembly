@@ -25,16 +25,15 @@
 
 Modificações no montador: arquivos defs.h e montador.c:
 
-### defs.h
+#### defs.h
 
 ```c
-// Para incluir uma nova INSTRUCAO, e' necessario mexer em 3 lugares diferentes:
 // Definir o Codigo da Instrucao: 
-  #define LOAD_CODE  1
+#define SQRT_CODE     98
 // Definir os Bits da Instrucao: 
-  #define LOAD       "110000"
+ #define SQRT      		"100110"
 // Definir a String de como a Instrucao deve aparecer no programa ASM:
-  #define LOAD_STR   "LOAD"
+ #define SQRT_STR   	"SQRT"
 ```
 
 [Link para o video com a explicação do código](https://youtu.be/)
