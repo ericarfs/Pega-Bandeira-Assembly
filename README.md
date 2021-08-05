@@ -39,7 +39,7 @@ Modificações no montador - arquivos defs.h e montador.c:
 * __montador.c__
 ```c
 // 1) Definir os separadores da Instrucao e quantas linhas do EXE (mif) ela necessita:
-            /* Instrucoes de 2 argumentos e 1 linha : instr (), () -> [...] */
+        /* Instrucoes de 2 argumentos e 1 linha : instr (), () -> [...] */
         case NOT_CODE :	
      -> case SQRT_CODE:
 	case MOV_CODE :
