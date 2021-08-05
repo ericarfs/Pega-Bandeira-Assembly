@@ -113,7 +113,7 @@ main:
 	store posInimigo4, r0		; Seta Posicao Atual do Inimigo
 	store posAntInimigo4, r0	; Seta Posicao Anterior do Inimigo
 	loadn r0, #1
-	store dirInimigo4, r0		; Inimigo começa indo pra esquerda
+	store dirInimigo4, r0		; Inimigo começa indo pra baixo
 	
 	Loadn r0, #1100		 
 	store posInimigo5, r0		; Seta Posicao Atual do Inimigo
@@ -125,7 +125,7 @@ main:
 	store posInimigo6, r0		; Seta Posicao Atual do Inimigo
 	store posAntInimigo6, r0	; Seta Posicao Anterior do Inimigo
 	loadn r0, #3
-	store dirInimigo6, r0		; Inimigo começa indo pra esquerda
+	store dirInimigo6, r0		; Inimigo começa indo pra cima
 	 
 	;Posições das Bandeiras no campo inimigo
 	Loadn r0, #111
@@ -1362,19 +1362,19 @@ ChecaPos:
 	
 	;Verificar se o jogador alcançou o campo em que se deve por as bandeiras;
 	load r1, posFinalBandeira1
-	cmp r0, r1			; if posPlayer == posBandeira  Pega a bandeira!!
+	cmp r0, r1			; if posPlayer == posBandeira  Coloca a bandeira!!
 	jeq ColocarBandeira1
 	
 	load r1, posFinalBandeira2
-	cmp r0, r1			; if posPlayer == posBandeira  Pega a bandeira!!
+	cmp r0, r1			; if posPlayer == posBandeira  Coloca a bandeira!!
 	jeq ColocarBandeira2
 	
 	load r1, posFinalBandeira3
-	cmp r0, r1			; if posPlayer == posBandeira  Pega a bandeira!!
+	cmp r0, r1			; if posPlayer == posBandeira  Coloca a bandeira!!
 	jeq ColocarBandeira3
 	
 	load r1, posFinalBandeira4
-	cmp r0, r1			; if posPlayer == posBandeira  Pega a bandeira!!
+	cmp r0, r1			; if posPlayer == posBandeira  Coloca a bandeira!!
 	jeq ColocarBandeira4
  
 	jmp FimChecagem
@@ -1497,6 +1497,8 @@ ColocarBandeira4:
 	jmp FimChecagem
 	
 
+;Função que checa se as bandeiras pegas foram colocadas no local correto
+;Se todas as quatro estiverem em suas devidas bases, declara vitória
 ChecarBandeirasColocadas:
 	push r0
 	push r1
@@ -1519,7 +1521,7 @@ ChecarBandeirasColocadas:
 	cmp r1, r2
 	jne FimChecagem_BandeirasColocadas
 	
-	;jmp Vitoria
+	jmp Vitoria
 	jmp FimChecagem_BandeirasColocadas
 	
 	FimChecagem_BandeirasColocadas:
@@ -1556,6 +1558,7 @@ Vitoria:
 	call ApagaTela
 	jmp main
 
+;Checar se o player colidiu com o inimigo
 ColisaoPlayer:	
 	; Limpa a Tela !!
   	loadn r1, #tela4Linha0	; Endereco onde comeca a primeira linha do cenario!!
