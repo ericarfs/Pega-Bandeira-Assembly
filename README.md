@@ -10,3 +10,6 @@
 * __Disciplina__:  SSC0119 - Prática em Organização de Computadores
 
 * __Docente__: Eduardo do Valle Simões
+
+## O Jogo - Pega Bandeira
+https://github.com/ericarfs/Pega-Bandeira-Assembly/blob/main/imagem_jogo1.PNG?raw=true
