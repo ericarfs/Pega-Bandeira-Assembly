@@ -23,17 +23,99 @@
 
 #### A função implementada calcula a raiz quadrada de um número, retornando seu valor inteiro.
 
-Modificações no montador: arquivos defs.h e montador.c:
+Modificações no montador - arquivos defs.h e montador.c:
 
-#### defs.h
+* __defs.h__
 
 ```c
 // Definir o Codigo da Instrucao: 
-#define SQRT_CODE     98
+#define SQRT_CODE      98
 // Definir os Bits da Instrucao: 
- #define SQRT      		"100110"
+#define SQRT           "100110"
 // Definir a String de como a Instrucao deve aparecer no programa ASM:
- #define SQRT_STR   	"SQRT"
+#define SQRT_STR       "SQRT"
+```
+
+* __montador.c__
+```c
+// 1) Definir os separadores da Instrucao e quantas linhas do EXE (mif) ela necessita:
+        case LOAD_CODE :
+        case STORE_CODE :
+        case LOADIMED_CODE :
+        case STOREIMED_CODE :
+            parser_SkipUntil(','); 
+            parser_SkipUntilEnd(); 
+            end_cnt+=2; 
+            break;
+
+// 2) Explicar como o Montador vai montar os BITs da Instrucao e escrever no arquivo:
+        case SQRT_CODE : // Sqrt R1, R2
+            str_tmp1 = parser_GetItem_s();
+            val1 = BuscaRegistrador(str_tmp1);
+            free(str_tmp1);
+            parser_Match(',');
+            str_tmp2 = parser_GetItem_s();
+            val2 = BuscaRegistrador(str_tmp2);
+            free(str_tmp2);
+            str_tmp1 = ConverteRegistrador(val1);
+            str_tmp2 = ConverteRegistrador(val2);
+            sprintf(str_msg,"%s%s%20000",SQRT,str_tmp1,str_tmp2);
+            free(str_tmp1);
+            free(str_tmp2);
+            parser_Write_Inst(str_msg,end_cnt);
+            end_cnt +=1;
+        break;
+
+// 3) Buscar o nome da instrucao na base de instrucoes e retornar 'op_code interno' da instrucao:
+      if (strcmp(str_tmp,SQRT_STR) == 0)
+        {
+            return SQRT_CODE;
+        }
+    
+```
+
+Adicionar instrução no Simple Simulator:
+
+* __simple_simulador.c__
+
+```c
+(mesmas instruções que as demais operações aritméticas)
+//etapa de STATE_DECODE:
+case SQRT:
+    // reg[rx] = reg[ry] + reg[rz]; // Soma ou outra operacao
+    selM3 = ry;
+    selM4 = rz;
+    OP = pega_pedaco(IR,15,10);
+    carry = pega_pedaco(IR,0,0);
+    selM2 = sULA;
+    LoadReg[rx] = 1;
+    selM6 = sULA;
+    LoadFR  = 1;
+    // -----------------------------
+    state=STATE_FETCH;
+    break;
+
+//etapa de calcular resultado na ULA:
+case SQRT:
+    if(x>1)
+        result = (int)sqrt(x);
+    else
+        result = x;
+    break;	
+```
+
+Adicionar teste da instrução no arquivo de testes:
+
+* __cpuram.asm__
+
+```c
+//Teste do Sqrt
+loadn r1, #9
+sqrt r3, r1
+loadn r4, #'N'
+add r3, r4, r3
+loadn r0, #32
+outchar r3, r0	 //Printa Q na linha 32
 ```
 
 [Link para o video com a explicação do código](https://youtu.be/)
