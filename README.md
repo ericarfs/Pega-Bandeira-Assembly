@@ -39,14 +39,16 @@ Modificações no montador - arquivos defs.h e montador.c:
 * __montador.c__
 ```c
 // 1) Definir os separadores da Instrucao e quantas linhas do EXE (mif) ela necessita:
-        case LOAD_CODE :
-        case STORE_CODE :
-        case LOADIMED_CODE :
-        case STOREIMED_CODE :
-            parser_SkipUntil(','); 
-            parser_SkipUntilEnd(); 
-            end_cnt+=2; 
-            break;
+            /* Instrucoes de 2 argumentos e 1 linha : instr (), () -> [...] */
+            case NOT_CODE :	
+	 -> case SQRT_CODE:
+	    case MOV_CODE :
+            case OUTCHAR_CODE :
+            case CMP_CODE :
+                parser_SkipUntil(','); 
+                parser_SkipUntilEnd(); 
+                end_cnt++; 
+                break;
 
 // 2) Explicar como o Montador vai montar os BITs da Instrucao e escrever no arquivo:
         case SQRT_CODE : // Sqrt R1, R2
@@ -64,7 +66,7 @@ Modificações no montador - arquivos defs.h e montador.c:
             free(str_tmp2);
             parser_Write_Inst(str_msg,end_cnt);
             end_cnt +=1;
-        break;
+            break;
 
 // 3) Buscar o nome da instrucao na base de instrucoes e retornar 'op_code interno' da instrucao:
       if (strcmp(str_tmp,SQRT_STR) == 0)
