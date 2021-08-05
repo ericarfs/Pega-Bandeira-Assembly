@@ -21,5 +21,20 @@
 ## Modificação do processador para com a função SQRT implementada
 
 
-#### A função implementada calcula a raiz quadrada de um número, retorando seu valor inteiro.
+#### A função implementada calcula a raiz quadrada de um número, retornando seu valor inteiro.
+
+Modificações no montador: arquivos defs.h e montador.c:
+
+### defs.h
+
+```c
+// Para incluir uma nova INSTRUCAO, e' necessario mexer em 3 lugares diferentes:
+// Definir o Codigo da Instrucao: 
+  #define LOAD_CODE  1
+// Definir os Bits da Instrucao: 
+  #define LOAD       "110000"
+// Definir a String de como a Instrucao deve aparecer no programa ASM:
+  #define LOAD_STR   "LOAD"
+```
+
 [Link para o video com a explicação do código](https://youtu.be/)
