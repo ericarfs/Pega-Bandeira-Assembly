@@ -120,4 +120,4 @@ loadn r0, #32
 outchar r3, r0	 //Printa Q na linha 32
 ```
 
-[Link para o video com a explicação do código](https://youtu.be/)
+[Link para o video com a explicação e execução da modificação](https://youtu.be/)
