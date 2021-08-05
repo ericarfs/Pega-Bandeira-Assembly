@@ -40,15 +40,15 @@ Modificações no montador - arquivos defs.h e montador.c:
 ```c
 // 1) Definir os separadores da Instrucao e quantas linhas do EXE (mif) ela necessita:
             /* Instrucoes de 2 argumentos e 1 linha : instr (), () -> [...] */
-            case NOT_CODE :	
-	 -> case SQRT_CODE:
-	    case MOV_CODE :
-            case OUTCHAR_CODE :
-            case CMP_CODE :
-                parser_SkipUntil(','); 
-                parser_SkipUntilEnd(); 
-                end_cnt++; 
-                break;
+        case NOT_CODE :	
+     -> case SQRT_CODE:
+	case MOV_CODE :
+        case OUTCHAR_CODE :
+        case CMP_CODE :
+            parser_SkipUntil(','); 
+            parser_SkipUntilEnd(); 
+            end_cnt++; 
+            break;
 
 // 2) Explicar como o Montador vai montar os BITs da Instrucao e escrever no arquivo:
         case SQRT_CODE : // Sqrt R1, R2
