@@ -88,7 +88,7 @@ main:
 	call ImprimeTela2   		;  rotina de Impresao de Cenario na Tela Inteira
 
 	Loadn r0, #566
-	store posPlayer, r0		; Seta Posicao Atual da Player (dentro do GO)
+	store posPlayer, r0		; Seta Posicao Atual da Player
 	store posAntPlayer, r0	; Seta Posicao Anterior da Player
 	
 	Loadn r0, #63		 
