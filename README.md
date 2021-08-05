@@ -15,7 +15,7 @@
 ![Alt text](https://github.com/ericarfs/Pega-Bandeira-Assembly/blob/main/imagem_jogo5.PNG?raw=true  "Bandeiras na base")
 ![Alt text](https://github.com/ericarfs/Pega-Bandeira-Assembly/blob/main/imagem_jogo4.PNG?raw=true  "Tela de vitória")
 
-[Link para o video com a explicação do código e o jogo funcionando](https://youtu.be/)
+[Link para o video com a explicação do código e o jogo funcionando](https://youtu.be/OfeNMsFKUBw)
 
 
 ## Modificação do processador para com a função SQRT implementada
@@ -120,4 +120,4 @@ loadn r0, #32
 outchar r3, r0	 //Printa Q na linha 32
 ```
 
-[Link para o video com a explicação e execução da modificação](https://youtu.be/)
+[Link para o video com a explicação e execução da modificação](https://youtu.be/OfeNMsFKUBw?t=596)
